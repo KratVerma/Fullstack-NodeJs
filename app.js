@@ -14,7 +14,8 @@ const errorController = require('./controllers/error');
 const User = require('./models/user');
 
 
-const MONGODB_URI = '##';
+const MONGODB_URI = '####################';
+
 
 const app = exp();
 const store = new MongodbStore({
@@ -98,7 +99,7 @@ app.use(authRoutes);
 app.get('/500', errorController.get500Error);
 app.use(errorController.get404Error);
 app.use((error, req, res, next) => {
-    // console.log('going through the error middleware!');
+    console.log('Going through the error middleware!', 'checkout wale se jaa raha', error);
     res.redirect('/500');
 });
 

@@ -198,7 +198,7 @@ exports.deleteProduct = (req, res, next) => {
             return Product.deleteOne({ _id: prodId, userId: req.user._id })
         })
         .then(result => {
-            console.log('DESTROYED PRODUCT!!');
+            console.log('PRODUCT DESTROYED!!');
             res.status(200).json({ message: 'Success!' });
         })
         .catch(err => {
